@@ -1,7 +1,7 @@
 package algorithm.jianzhioffer;
 
 /**
- * Created by Lenovo on 2017/5/11.
+ * 旋转数组的最小数字
  */
 public class Problem8 {
 }

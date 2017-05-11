@@ -1,2 +1,2 @@
 # jobhunter
-practice makes perfect!
+我的刷题仓库！熟能生巧！
