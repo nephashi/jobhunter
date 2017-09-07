@@ -5,6 +5,37 @@ package algorithm.jianzhioffer;
  */
 public class Problem8 {
 
+    /**
+     * 寻找增序数组的旋转中的最小数字
+     * 2017/6/19
+     * @param a
+     * @return
+     * @throws Exception
+     */
+    int searchMin2(int[] a) throws Exception {
+        if(a == null) throw new Exception("null!");
+        int left = 0, right = a.length, mid = left;
+        while (a[left] >= a[right]) {
+            if(right == left + 1) break;
+            mid = (left + right) / 2;
+            if(a[left] == a[right] && a[left] == a[mid]) {
+                int min = a[left];
+                while (left <= right) {
+                    if(a[left] < min)
+                        min = a[left];
+                    left++;
+                }
+                return min;
+            }
+            if(a[mid] >= a[left]) {
+                left = mid;
+            } else if(a[mid] <= a[right]) {
+                right = mid;
+            }
+        }
+        return a[mid];
+    }
+
     int searchMin(int[] a) throws Exception{
         if(a == null) throw new Exception("input error!");
         int len = a.length;

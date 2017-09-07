@@ -6,7 +6,7 @@ import java.util.Stack;
  * 链表
  */
 public class LinkList {
-
+    
     private LinkNode<Integer> head = null;
 
     public LinkNode<Integer> getHead() {

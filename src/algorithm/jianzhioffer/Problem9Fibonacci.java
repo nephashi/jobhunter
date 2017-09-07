@@ -3,7 +3,7 @@ package algorithm.jianzhioffer;
 /**
  * 动态规划实现斐波那契数列
  */
-public class Fibonacci {
+public class Problem9Fibonacci {
 
     public int fibonacci(int n) throws Exception{
         if(n < 0) throw new Exception("input error!");
@@ -21,7 +21,7 @@ public class Fibonacci {
     }
 
     public static void main(String[] args) {
-        Fibonacci f =new Fibonacci();
+        Problem9Fibonacci f =new Problem9Fibonacci();
         try {
             System.out.println(f.fibonacci(5));
         } catch (Exception e) {

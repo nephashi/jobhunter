@@ -34,4 +34,15 @@ public class LinkNode<T> {
         this.data = data;
         this.next = next;
     }
+
+    public static LinkNode<Integer> createLinkList(Integer[] array) {
+        LinkNode<Integer> head = new LinkNode<>(array[0]);
+        LinkNode<Integer> pre = head;
+        for(int i = 1; i < array.length; i++) {
+            LinkNode<Integer> node = new LinkNode<>(array[i]);
+            pre.setNext(node);
+            pre = node;
+        }
+        return head;
+    }
 }
