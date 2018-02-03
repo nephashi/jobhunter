@@ -4,8 +4,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Problem15 {
-    public static List<List<Integer>> threeSum(int[] nums) {
+public class Problem18 {
+
+    static List<List<Integer>> threeSum(int[] nums, int target) {
         List<List<Integer>> result = new ArrayList<>();
         Arrays.sort(nums);
         for (int i = 0; i < nums.length - 2; i++) {
@@ -14,9 +15,9 @@ public class Problem15 {
             int last = nums.length - 1;
             while (second < last) {
                 int sum = nums[second] + nums[last];
-                if (sum < -1 * nums[first]) {
+                if (sum < target - nums[first]) {
                     second++;
-                } else if (sum > -1 * nums[first]) {
+                } else if (sum > target - nums[first]) {
                     last--;
                 } else {
                     List<Integer> lst = new ArrayList<>();
@@ -41,9 +42,26 @@ public class Problem15 {
         return result;
     }
 
+    public static List<List<Integer>> fourSum(int[] nums, int target) {
+        Arrays.sort(nums);
+        List<List<Integer>> rst = new ArrayList<>();
+        for (int i = 0; i < nums.length - 3; i++) {
+            int[] tmpNums = Arrays.copyOfRange(nums, i + 1, nums.length);
+            List<List<Integer>> tmp = threeSum(tmpNums, target - nums[i]);
+            for (int j = 0; j < tmp.size(); j++) {
+                tmp.get(j).add(nums[i]);
+            }
+            rst.addAll(tmp);
+            while (i < nums.length - 1 && nums[i] == nums[i + 1]) {
+                i++;
+            }
+        }
+        return rst;
+    }
+
     public static void main(String[] args) {
-        int[] tmp = {-1,0,1,2,-1,-4};
-        List<List<Integer>> rst = threeSum(tmp);
+        int[] s = {1, 0, -1, 0, -2, 2};
+        List<List<Integer>> rst = fourSum(s, 0);
         System.out.println();
     }
 }
