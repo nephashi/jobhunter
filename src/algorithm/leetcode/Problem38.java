@@ -1,6 +1,6 @@
 package algorithm.leetcode;
 
-public class Problem37 {
+public class Problem38 {
     public static String countAndSay(int n) {
         String cur = "1";
         for (int i = 1; i < n; i++) {
