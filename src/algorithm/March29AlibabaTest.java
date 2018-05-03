@@ -1,6 +1,8 @@
+package algorithm;
+
 import java.util.Scanner;
 
-public class Main {
+public class March29AlibabaTest {
 
     static boolean maxComponent(int a, int b) {
         for (int i = 2; i <= Math.min(a, b); i++) {
