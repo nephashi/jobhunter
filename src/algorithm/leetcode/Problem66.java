@@ -1,6 +1,6 @@
 package algorithm.leetcode;
 
-public class Probelm66 {
+public class Problem66 {
     public static int[] plusOne(int[] digits) {
         int[] carry = new int[digits.length + 1];
         carry[carry.length - 1] = 1;
