@@ -20,11 +20,12 @@ public class Problem70 {
         }
     }
 
-//    public static int climbStairs(int n) {
-//        List<List<Integer>> search = new ArrayList<>();
-//        climbStairsSearch(0, new ArrayList<>(), n, search);
-//        return search.size();
-//    }
+    // this takes too much time
+    public static int climbStairs1(int n) {
+        List<List<Integer>> search = new ArrayList<>();
+        climbStairsSearch(0, new ArrayList<>(), n, search);
+        return search.size();
+    }
 
     public static int climbStairs(int n) {
         if(n <= 2) return n;
