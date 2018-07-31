@@ -6,6 +6,47 @@ import java.util.List;
 
 public class Problem18 {
 
+    public static List<List<Integer>> fourSum(int[] nums, int target) {
+        List<List<Integer>> result = new ArrayList<>();
+        Arrays.sort(nums);
+        for (int i = 0; i < nums.length - 3; i++) {
+            while (i > 0 && i < nums.length - 3 && nums[i] == nums[i - 1]) {
+                i++;
+            }
+            for (int j = i + 1; j < nums.length - 2; j++) {
+                while (j > i + 1 && j < nums.length - 2 && nums[j] == nums[j - 1]) {
+                    j++;
+                }
+                int first = j + 1;
+                int last = nums.length - 1;
+                while (first < last) {
+                    int sum = nums[i] + nums[j] + nums[first] + nums[last];
+                    if (sum > target) {
+                        last--;
+                    } else if (sum < target) {
+                        first++;
+                    } else if (sum == target) {
+                        List<Integer> lst = new ArrayList<>();
+                        lst.add(nums[i]);
+                        lst.add(nums[j]);
+                        lst.add(nums[first]);
+                        lst.add(nums[last]);
+                        result.add(lst);
+                        last--;
+                        first++;
+                    }
+                    while (first > j + 1 && first < last && nums[first] == nums[first - 1]) {
+                        first++;
+                    }
+                    while (last < nums.length - 1 && first < last && nums[last] == nums[last + 1]) {
+                        last--;
+                    }
+                }
+            }
+        }
+        return result;
+    }
+
     static List<List<Integer>> threeSum(int[] nums, int target) {
         List<List<Integer>> result = new ArrayList<>();
         Arrays.sort(nums);
@@ -42,7 +83,7 @@ public class Problem18 {
         return result;
     }
 
-    public static List<List<Integer>> fourSum(int[] nums, int target) {
+    public static List<List<Integer>> fourSum2(int[] nums, int target) {
         Arrays.sort(nums);
         List<List<Integer>> rst = new ArrayList<>();
         for (int i = 0; i < nums.length - 3; i++) {

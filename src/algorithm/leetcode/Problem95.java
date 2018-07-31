@@ -46,7 +46,7 @@ public class Problem95 {
     }
 
     public static void main(String[] args) {
-       List<TreeNode> roots = generateTrees(3);
+       List<TreeNode> roots = generateTrees(5);
        System.out.println();
     }
 
