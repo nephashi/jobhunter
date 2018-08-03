@@ -23,7 +23,7 @@ public class Problem5 {
         int maxlen = 0, l = 0, r = 0;
         for(int i = 0; i < strlen; i++) {
             for (int j = i; j < strlen; j++) {
-                if(dp[i][j] == true && (j - i + 1 > maxlen)){
+                if(dp[i][j] == true && (j - i + 1 > maxlen)) {
                     maxlen = j - i + 1;
                     l = i;
                     r = j;
