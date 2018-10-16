@@ -4,6 +4,8 @@ import java.util.Arrays;
 
 public class HeapSort {
 
+    protected int a = 0;
+
     public static void heapAdjust(int[] nums, int target, int length) {
         for (int k = target * 2 + 1; k <= length; k = k * 2 + 1) {
             if (nums[k + 1] > nums[k] && k + 1 <= length) {

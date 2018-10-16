@@ -1,4 +1,4 @@
-package algorithm;
+package algorithm.real;
 
 import java.util.Scanner;
 

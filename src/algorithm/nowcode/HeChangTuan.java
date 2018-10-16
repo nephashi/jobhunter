@@ -4,6 +4,10 @@ import java.util.Scanner;
 
 public class HeChangTuan {
 
+    // 这种在数组里找几个乘积最大，并且强调位置关系的都可以用这种方案
+    // 所谓强调位置关系，例如位置必须相邻，位置不能间隔太大等
+    // dp[i][j]表示用j个数做乘法，其中最后一个数的下标是i，这种情况下最大/最小的乘积是什么
+    // 如果不强调位置关系dp[i][j]可以改为
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();

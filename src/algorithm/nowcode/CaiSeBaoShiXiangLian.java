@@ -1,6 +1,8 @@
-package algorithm.leetcode;
+package algorithm.nowcode;
 
-public class Problem76 {
+import java.util.Scanner;
+
+public class CaiSeBaoShiXiangLian {
 
     public static String minWindow(String S, String T) {
         int[] srcHash = new int[256];
@@ -38,6 +40,15 @@ public class Problem76 {
     }
 
     public static void main(String[] args) {
-        System.out.println(minWindow("ABBBBBBB", "ABC"));
+        Scanner sc = new Scanner(System.in);
+        String dst = sc.nextLine();
+        String doubleDst = dst + dst;
+
+        String s = minWindow(doubleDst, "ABCDE");
+
+        System.out.println(dst.length() - s.length());
+
+
     }
+
 }

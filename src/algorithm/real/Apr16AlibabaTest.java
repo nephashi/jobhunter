@@ -1,4 +1,4 @@
-package algorithm;
+package algorithm.real;
 
 public class Apr16AlibabaTest {
 

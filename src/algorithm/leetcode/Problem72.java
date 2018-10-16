@@ -35,7 +35,7 @@ public class Problem72 {
     }
 
     public static void main(String[] args) {
-        System.out.println(minDistance( "", "a"));
+        System.out.println(minDistance("kitten", "sitting"));
     }
 
 }
