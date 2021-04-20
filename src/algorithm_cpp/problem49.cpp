@@ -12,10 +12,6 @@ public:
     vector<vector<string>> groupAnagrams(vector<string>& strs) {
 	auto arrayHash = [](const array<int, 26>& arr) -> int {
 	    return accumulate(arr.begin(), arr.end(), 0u, [&](size_t acc, int num) -> int {
-		//cout << "acculumate" << endl;
-		int tmp = (acc << 1) ^ num;
-		//cout << tmp << endl;
-		//cout << "acculumated" << endl;
 		return (acc << 1) ^ num;
 	    });
 	};

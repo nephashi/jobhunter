@@ -1,5 +1,30 @@
 class Solution {
 public:
+    ListNode* merge(ListNode* head1, ListNode* head2) {
+	ListNode* hair = new ListNode(0);
+	ListNode* cur = hair;
+	while (head1 != nullptr && head2 != nullptr) {
+	    if (head1->val < head2->val) {
+		cur->next = head1;
+		head1 = head1->next;
+	    } else {
+		cur->next = head2;
+		head2 = head2->next;
+	    }
+	    cur = cur->next;
+	}
+	while (head1 != nullptr) {
+	    cur->next = head1;
+	    cur = cur->next;
+	    head1 = head1->next;
+	}
+	while (head2 != nullptr) {
+	    cur->next = head2;
+	    cur = cur->next;
+	    head2 = head2->next;
+	}
+	return hair->next;
+    }
 
     ListNode* sortList(ListNode* head) {
 	if (head == nullptr) return nullptr;
@@ -37,7 +62,7 @@ public:
 		cur = next;
 	    }
 	}
-		
+	return hair->next;
 		
     }
 };
